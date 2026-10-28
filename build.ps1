@@ -1,17 +1,12 @@
-$ErrorActionPreference = "Stop"
+. (Join-Path $PSScriptRoot "scripts/deploy-common.ps1")
 
-if (Test-Path ".\.env") {
-    Get-Content ".\.env" | ForEach-Object {
-        $line = $_.Trim()
-        if ($line -and -not $line.StartsWith("#") -and $line.Contains("=")) {
-            $name, $value = $line.Split("=", 2)
-            [Environment]::SetEnvironmentVariable($name.Trim(), $value.Trim(), "Process")
-        }
-    }
+Invoke-ProjectPython -m pip install --only-binary=:all: -r requirements.txt
+Invoke-ProjectPython manage.py check --deploy --fail-level ERROR
+Invoke-ProjectPython manage.py collectstatic --noinput
+$runtimeDatabaseUrl = $env:DATABASE_URL
+try {
+    if ($env:MIGRATION_DATABASE_URL) { $env:DATABASE_URL = $env:MIGRATION_DATABASE_URL }
+    Invoke-ProjectPython manage.py migrate --noinput
+} finally {
+    [Environment]::SetEnvironmentVariable("DATABASE_URL", $runtimeDatabaseUrl, "Process")
 }
-
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-python manage.py check
-python manage.py collectstatic --noinput --clear
-python manage.py migrate --noinput

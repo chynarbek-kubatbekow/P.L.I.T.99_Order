@@ -1,16 +1,16 @@
-import logging
+import warnings
 from io import BytesIO
 from pathlib import Path
 from uuid import uuid4
 
 from django.conf import settings
 from django.core.files.base import ContentFile
+from django.core.exceptions import SuspiciousFileOperation, ValidationError
 from django.utils._os import safe_join
-from PIL import Image, ImageOps
+from PIL import Image, ImageOps, UnidentifiedImageError
 
 
 MAX_IMAGE_SIZE = (1600, 1600)
-logger = logging.getLogger(__name__)
 
 
 def build_upload_path(directory, filename):
@@ -28,12 +28,33 @@ def gallery_image_upload_to(instance, filename):
     return build_upload_path('gallery', filename)
 
 
+def validate_uploaded_image(uploaded_file):
+    if not uploaded_file or getattr(uploaded_file, '_committed', False):
+        return
+    try:
+        if uploaded_file.size > settings.MAX_UPLOAD_IMAGE_BYTES:
+            raise ValidationError('Изображение не должно превышать 10 МБ.')
+        uploaded_file.open('rb')
+        with warnings.catch_warnings():
+            warnings.simplefilter('error', Image.DecompressionBombWarning)
+            with Image.open(uploaded_file) as probe:
+                if probe.format not in {'JPEG', 'PNG', 'WEBP'}:
+                    raise ValidationError('Допустимы только JPEG, PNG и WebP.')
+                if probe.width * probe.height > settings.MAX_UPLOAD_IMAGE_PIXELS:
+                    raise ValidationError('Изображение содержит слишком много пикселей.')
+                probe.verify()
+    except (OSError, ValueError, SyntaxError, UnidentifiedImageError,
+            Image.DecompressionBombError, Image.DecompressionBombWarning) as exc:
+        raise ValidationError('Файл не является допустимым изображением.') from exc
+    finally:
+        uploaded_file.seek(0)
+
+
 def optimize_uploaded_image(uploaded_file):
     if not uploaded_file or getattr(uploaded_file, '_committed', False):
         return None
-
+    validate_uploaded_image(uploaded_file)
     try:
-        uploaded_file.open('rb')
         with Image.open(uploaded_file) as image:
             image = ImageOps.exif_transpose(image)
             image.thumbnail(MAX_IMAGE_SIZE, Image.Resampling.LANCZOS)
@@ -43,11 +64,11 @@ def optimize_uploaded_image(uploaded_file):
             )
 
             output = BytesIO()
-            stem = Path(uploaded_file.name).stem or uuid4().hex
+            stem = uuid4().hex
 
             if has_alpha:
                 optimized = image.convert('RGBA')
-                optimized.save(output, format='PNG', optimize=True, compress_level=7)
+                optimized.save(output, format='PNG', optimize=True, compress_level=7, exif=b'')
                 extension = '.png'
             else:
                 optimized = image.convert('RGB')
@@ -57,19 +78,18 @@ def optimize_uploaded_image(uploaded_file):
                     quality=82,
                     optimize=True,
                     progressive=True,
+                    exif=b'',
                 )
                 extension = '.jpg'
 
         optimized_file = ContentFile(output.getvalue())
         optimized_file.name = f'{stem}{extension}'
         return optimized_file
-    except Exception as exc:
-        logger.warning(
-            'Could not optimize uploaded image %s: %s',
-            getattr(uploaded_file, 'name', 'unknown'),
-            exc,
-        )
-        return None
+    except (OSError, ValueError, SyntaxError, UnidentifiedImageError,
+            Image.DecompressionBombError, Image.DecompressionBombWarning) as exc:
+        raise ValidationError('Файл не является допустимым изображением.') from exc
+    finally:
+        uploaded_file.seek(0)
 
 
 def _safe_media_path(root, relative_path):
@@ -78,8 +98,13 @@ def _safe_media_path(root, relative_path):
 
     normalized = str(relative_path).replace('\\', '/').lstrip('/')
     try:
-        return Path(safe_join(str(root), normalized))
-    except ValueError:
+        root = Path(root).resolve()
+        candidate = Path(safe_join(str(root), normalized)).resolve()
+        candidate.relative_to(root)
+        if any(part.startswith('.') for part in Path(normalized).parts):
+            return None
+        return candidate
+    except (ValueError, OSError, SuspiciousFileOperation):
         return None
 
 

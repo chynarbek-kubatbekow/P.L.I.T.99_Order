@@ -6,13 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FHXYBY7YP"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-2FHXYBY7YP');
-  </script>
+  <script src="{% static 'js/analytics-init.js' %}"></script>
   <title>{% block title %}IT-лицей 99{% endblock %} — Профессиональный лицей ИТ при Президенте КР</title>
   <meta name="description" content="{% block meta_desc %}Профессиональный лицей информационных технологий №99 при Президенте КР. Бесплатное ИТ-образование в Бишкеке. Основан в 2023 году.{% endblock %}">
   <meta name="theme-color" content="#0A2540">

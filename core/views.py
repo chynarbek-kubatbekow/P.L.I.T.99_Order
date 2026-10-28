@@ -1,6 +1,7 @@
 import logging
 
 from django.db import DatabaseError
+from django.views.decorators.http import require_safe
 from django.http import Http404, JsonResponse
 from django.shortcuts import get_object_or_404, render
 
@@ -13,7 +14,7 @@ def safe_first(queryset, context):
     try:
         return queryset.first()
     except DatabaseError as exc:
-        logger.warning('Database is not ready while loading %s: %s', context, exc)
+        logger.warning('Database is not ready while loading %s', context)
         return None
 
 
@@ -21,7 +22,7 @@ def safe_list(queryset, context):
     try:
         return list(queryset)
     except DatabaseError as exc:
-        logger.warning('Database is not ready while loading %s: %s', context, exc)
+        logger.warning('Database is not ready while loading %s', context)
         return []
 
 
@@ -29,10 +30,11 @@ def safe_get_or_404(queryset, context, **kwargs):
     try:
         return get_object_or_404(queryset, **kwargs)
     except DatabaseError as exc:
-        logger.warning('Database is not ready while loading %s: %s', context, exc)
+        logger.warning('Database is not ready while loading %s', context)
         raise Http404('Content is temporarily unavailable.') from exc
 
 
+@require_safe
 def index(request):
     featured_news = safe_first(
         News.objects.filter(is_published=True, is_featured=True),
@@ -55,22 +57,27 @@ def index(request):
     )
 
 
+@require_safe
 def about(request):
     return render(request, 'core/about.html')
 
 
+@require_safe
 def education(request):
     return render(request, 'core/education.html')
 
 
+@require_safe
 def results(request):
     return render(request, 'core/results.html')
 
 
+@require_safe
 def admission(request):
     return render(request, 'core/admission.html')
 
 
+@require_safe
 def media_hub(request):
     view_mode = request.GET.get('view', 'all')
     if view_mode not in {'all', 'news', 'gallery'}:
@@ -124,6 +131,7 @@ def media_hub(request):
     )
 
 
+@require_safe
 def news_list(request):
     category_slug = request.GET.get('cat')
     categories = safe_list(NewsCategory.objects.all(), 'news categories')
@@ -156,6 +164,7 @@ def news_list(request):
     )
 
 
+@require_safe
 def news_detail(request, slug):
     news = safe_get_or_404(
         News.objects.filter(is_published=True),
@@ -169,6 +178,7 @@ def news_detail(request, slug):
     return render(request, 'core/news_detail.html', {'news': news, 'related': related})
 
 
+@require_safe
 def gallery(request):
     category_slug = request.GET.get('cat')
     categories = safe_list(GalleryCategory.objects.all(), 'gallery categories')
@@ -195,9 +205,11 @@ def gallery(request):
     )
 
 
+@require_safe
 def contacts(request):
     return render(request, 'core/contacts.html')
 
 
+@require_safe
 def healthz(request):
     return JsonResponse({'status': 'ok'})

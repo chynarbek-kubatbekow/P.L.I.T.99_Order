@@ -1,5 +1,5 @@
 {% extends 'core/base.html' %}
-{% load static news_media %}
+{% load static news_media content_format %}
 {% block title %}Новости&Галерея{% endblock %}
 {% block nav_media %}active{% endblock %}
 
@@ -53,7 +53,7 @@
           {% if featured|news_static_cover %}
             <img src="{{ featured|news_static_cover }}" alt="{{ featured.title }}" decoding="async" fetchpriority="high" style="height:100%;min-height:320px;object-fit:cover;width:100%">
           {% else %}
-            <div class="news-img-placeholder" style="min-height:320px;background:{{ featured.cover_gradient }}">
+            <div class="news-img-placeholder" style="min-height:320px;background:{{ featured.cover_gradient|safe_gradient }}">
               <svg class="news-placeholder-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 8h10M7 12h10M7 16h6"></path></svg>
             </div>
           {% endif %}
@@ -78,7 +78,7 @@
           {% if item|news_static_cover %}
             <img src="{{ item|news_static_cover }}" alt="{{ item.title }}" class="news-img" loading="lazy" decoding="async">
           {% else %}
-            <div class="news-img-placeholder" style="height:200px;background:{{ item.cover_gradient }}">
+            <div class="news-img-placeholder" style="height:200px;background:{{ item.cover_gradient|safe_gradient }}">
               <svg class="news-placeholder-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 8h10M7 12h10M7 16h6"></path></svg>
             </div>
           {% endif %}
@@ -131,7 +131,7 @@
         {% elif item.media_type == 'video' and item.video_url %}
           <div class="gallery-item section-panel" style="padding:0" data-aos data-delay="{{ forloop.counter0 }}00">
             <div style="position:relative;padding-bottom:56.25%;background:var(--ocean-900)">
-              <iframe src="{{ item.video_url }}" style="position:absolute;inset:0;width:100%;height:100%;border:none" allowfullscreen loading="lazy"></iframe>
+              <iframe src="{{ item.video_url|video_embed_url }}" sandbox="allow-scripts allow-same-origin allow-presentation" referrerpolicy="no-referrer" title="Видео" style="position:absolute;inset:0;width:100%;height:100%;border:none" allowfullscreen loading="lazy"></iframe>
             </div>
             {% if item.title %}<div style="padding:.75rem 1rem;font-size:.82rem;color:var(--gray-600)">{{ item.title }}</div>{% endif %}
           </div>

@@ -13,6 +13,8 @@ def configure_sqlite_connection(sender, connection, **kwargs):
         return
 
     requested_journal_mode = os.getenv('SQLITE_JOURNAL_MODE', 'WAL').strip().upper() or 'WAL'
+    if requested_journal_mode not in {'WAL', 'DELETE', 'TRUNCATE', 'PERSIST'}:
+        requested_journal_mode = 'WAL'
 
     with connection.cursor() as cursor:
         cursor.execute('PRAGMA foreign_keys = ON;')

@@ -1,0 +1,1325 @@
+{
+  "scope": "Pinned repository documentation; external articles, books, videos and linked repositories are not exhaustively read. Review levels are explicit per file. No referenced tool, hook, plugin or vulnerable application is activated.",
+  "repositories": [
+    {
+      "repository": "qazbnm456/awesome-web-security",
+      "commit": "d633320c12fdc21c282fa48af3438a4674163912",
+      "documents": [
+        {
+          "path": ".github/PULL_REQUEST_TEMPLATE.md",
+          "bytes": 1007,
+          "lines": 28,
+          "sha256": "61ecbfca1c5579fd1744d5c617c343d97256d80be9cfd923581cc64282bcbb2c",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/.github/PULL_REQUEST_TEMPLATE.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "CLAUDE.md",
+          "bytes": 13482,
+          "lines": 267,
+          "sha256": "0d6d82cdb6decfefc8a57303c2f722bae5719ecd16f532bf964f5bb7775da042",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/CLAUDE.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "CONTRIBUTING.md",
+          "bytes": 7592,
+          "lines": 165,
+          "sha256": "8a3882ab0e2a75c22cfd26c2e50abfae77b9e9225d07b1ca9f9b88ae7221fc0d",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/CONTRIBUTING.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "README-jp.md",
+          "bytes": 75270,
+          "lines": 884,
+          "sha256": "5d474e5ea09f5061d9f99b14e3824f3cf4763d399b9a1dfd96daa6b0ce8a1d80",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/README-jp.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "README-zh.md",
+          "bytes": 80921,
+          "lines": 924,
+          "sha256": "51e6a3d19aa219c8e51879edf3cab4cc15c0fc5501e932cc9491a2773ee82ed0",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/README-zh.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "README.md",
+          "bytes": 78514,
+          "lines": 903,
+          "sha256": "a6a138365794c5182472d998a8c5fa00a435012f05679b73c080b371697e39f5",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/README.md",
+          "review_level": "full_root_readme"
+        },
+        {
+          "path": "RUBRIC.md",
+          "bytes": 4912,
+          "lines": 135,
+          "sha256": "d70284f7118d7a0da701adf3c1d99c8641ebdda0471813bee5a4cf20532083d7",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/RUBRIC.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "code-of-conduct.md",
+          "bytes": 3226,
+          "lines": 74,
+          "sha256": "a95d7deac593c4802962df1e46c189d15cf0676452aae9eab694a63dc30db5eb",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/code-of-conduct.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "data/templates/postamble.md",
+          "bytes": 477,
+          "lines": 9,
+          "sha256": "0703387adf6e13b95e51f00bbc63b7f562cc905732d590f40c9e09c1159ab127",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/data/templates/postamble.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "data/templates/preamble.md",
+          "bytes": 2398,
+          "lines": 41,
+          "sha256": "b2c5662b7b0bbd0532aefc3c0c64fef5ed1ba8fc5163eb697fdffec365dbeff3",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/data/templates/preamble.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "scripts/ci/templates/comment.en.md",
+          "bytes": 696,
+          "lines": 19,
+          "sha256": "9556a638c35310d519e71a6bab06149dbcb18822c49e4ef7fc8e68bac235048a",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/scripts/ci/templates/comment.en.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "scripts/ci/templates/comment.jp.md",
+          "bytes": 971,
+          "lines": 19,
+          "sha256": "419c5f1270e2a9e6470c09c87044553c1d34eba8f0f4fdd67bc145a6a15ef954",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/scripts/ci/templates/comment.jp.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "scripts/ci/templates/comment.zh.md",
+          "bytes": 769,
+          "lines": 19,
+          "sha256": "a64713b2a12d5d930d0b2a488d2aeb2618b64d2d00b4da7615b0402fc3a9b309",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/scripts/ci/templates/comment.zh.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "scripts/ci/templates/port-comment.md",
+          "bytes": 1260,
+          "lines": 12,
+          "sha256": "a133806cab066389a1ba3e7fa1fa90f10f2fbcc72bdb75da58afe76886d3de52",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/scripts/ci/templates/port-comment.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "skills/awesome-web-security/SKILL.md",
+          "bytes": 5401,
+          "lines": 117,
+          "sha256": "8c4b4f1461cd6a7b2030ef131d518dd37991d7aed5485251e886dba0941b7777",
+          "url": "https://raw.githubusercontent.com/qazbnm456/awesome-web-security/d633320c12fdc21c282fa48af3438a4674163912/skills/awesome-web-security/SKILL.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        }
+      ]
+    },
+    {
+      "repository": "infoslack/awesome-web-hacking",
+      "commit": "89b0179c90517e518e27ec37b679201ce06aebc2",
+      "documents": [
+        {
+          "path": "README.md",
+          "bytes": 31168,
+          "lines": 296,
+          "sha256": "4afbcc74680588d37d2a41957db60088be0f9ce4dbac2f9c7eba601a86a0ba32",
+          "url": "https://raw.githubusercontent.com/infoslack/awesome-web-hacking/89b0179c90517e518e27ec37b679201ce06aebc2/README.md",
+          "review_level": "full_root_readme"
+        }
+      ]
+    },
+    {
+      "repository": "vavkamil/awesome-vulnerable-apps",
+      "commit": "0a53749ef119b11a686c2a532725b156c9473736",
+      "documents": [
+        {
+          "path": ".github/PULL_REQUEST_TEMPLATE.md",
+          "bytes": 499,
+          "lines": 17,
+          "sha256": "36158e5ce1fb9339aa3d7a61ed03c42e1c54cbfe39e2513551fb24ed2ba6f973",
+          "url": "https://raw.githubusercontent.com/vavkamil/awesome-vulnerable-apps/0a53749ef119b11a686c2a532725b156c9473736/.github/PULL_REQUEST_TEMPLATE.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "README.md",
+          "bytes": 15938,
+          "lines": 203,
+          "sha256": "9bafabdc6af7eea03ac3e93b750cad363c204a3625aac02b2d15b83a87abd304",
+          "url": "https://raw.githubusercontent.com/vavkamil/awesome-vulnerable-apps/0a53749ef119b11a686c2a532725b156c9473736/README.md",
+          "review_level": "full_root_readme"
+        },
+        {
+          "path": "code-of-conduct.md",
+          "bytes": 3231,
+          "lines": 74,
+          "sha256": "cc7ce8a0f63f919c9c891af69c633677c6e9d12d2a172f1618ce903e41d4212c",
+          "url": "https://raw.githubusercontent.com/vavkamil/awesome-vulnerable-apps/0a53749ef119b11a686c2a532725b156c9473736/code-of-conduct.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        },
+        {
+          "path": "contributing.md",
+          "bytes": 862,
+          "lines": 25,
+          "sha256": "e70db58f2df7fe77e7dfae5fcce0bf4165a326d554a62a66a33518a70871e45a",
+          "url": "https://raw.githubusercontent.com/vavkamil/awesome-vulnerable-apps/0a53749ef119b11a686c2a532725b156c9473736/contributing.md",
+          "review_level": "translation_or_repository_governance_not_detailed_review"
+        }
+      ]
+    },
+    {
+      "repository": "swisskyrepo/PayloadsAllTheThings",
+      "commit": "3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a",
+      "documents": [
+        {
+          "path": "API Key Leaks/IIS-Machine-Keys.md",
+          "bytes": 12263,
+          "lines": 207,
+          "sha256": "7ae1747f27a5fe4692c8a6daa22d3d11505ead181f4b6063fdeb132f580e8885",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/API%20Key%20Leaks/IIS-Machine-Keys.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "API Key Leaks/README.md",
+          "bytes": 5693,
+          "lines": 108,
+          "sha256": "380e3a93f463cbd24786b8c6ea2fcbd1620cb3a45ca29c6c80072dffc825b2ec",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/API%20Key%20Leaks/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Account Takeover/README.md",
+          "bytes": 7332,
+          "lines": 187,
+          "sha256": "4cbbbf410977aa3cf3ec0b1b28b2b81cae06791e278a4ac8f1e264394ed30f39",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Account%20Takeover/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Account Takeover/mfa-bypass.md",
+          "bytes": 3496,
+          "lines": 99,
+          "sha256": "298301035c16c445da52890b72d6f524cb569763fac7b178f7dac0c8e93517ec",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Account%20Takeover/mfa-bypass.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Brute Force Rate Limit/README.md",
+          "bytes": 5937,
+          "lines": 147,
+          "sha256": "df39f00ed2aea192992aab3f29ee0a2bec54da871f7f5215bc004e25bc6adcdd",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Brute%20Force%20Rate%20Limit/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Business Logic Errors/README.md",
+          "bytes": 6237,
+          "lines": 95,
+          "sha256": "7a7db6f29968d37cead314573594e58dba91245bfba9e6ae4e4c95a74bed983c",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Business%20Logic%20Errors/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "CONTRIBUTING.md",
+          "bytes": 3049,
+          "lines": 47,
+          "sha256": "93075f96b921a586af07ca228f1d2e3ddc0cb79983277d764e2a92e55263519f",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/CONTRIBUTING.md",
+          "review_level": "supporting_index_not_a_project_security_requirement"
+        },
+        {
+          "path": "CORS Misconfiguration/README.md",
+          "bytes": 10036,
+          "lines": 274,
+          "sha256": "7b16be29ad04036c0846cc440de4ec7b962982b4ef7018bdafd3c0143f68e248",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/CORS%20Misconfiguration/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "CRLF Injection/README.md",
+          "bytes": 5689,
+          "lines": 152,
+          "sha256": "79b2c5896102877d5b972088978e4c6adc1b8bf86dd648dde32d6e1cb380b430",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/CRLF%20Injection/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "CSS Injection/README.md",
+          "bytes": 10471,
+          "lines": 199,
+          "sha256": "d7082957df7f9de34dd8c68cd1766b630f32fb917ea632ee325290173909b31d",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/CSS%20Injection/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "CSV Injection/README.md",
+          "bytes": 4149,
+          "lines": 92,
+          "sha256": "34c678abf833bcd25ad2a026e8e6d73899ebe7859245681adb32ec4bfd956062",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/CSV%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "CVE Exploits/Log4Shell.md",
+          "bytes": 4827,
+          "lines": 107,
+          "sha256": "84e012f5e37d6fb35ca9cafc24cdcad767ec90aa9eb498bca6fc80d02f6ebb7e",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/CVE%20Exploits/Log4Shell.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "CVE Exploits/README.md",
+          "bytes": 6118,
+          "lines": 85,
+          "sha256": "4421ff621ce0e34bd167a991b8c009bb920954445c02fd144dda28f2aecfa067",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/CVE%20Exploits/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Clickjacking/README.md",
+          "bytes": 13022,
+          "lines": 256,
+          "sha256": "b200da842d971ca200512cdbe6067dfdad717ea936d72e34f4e7bc7c4f57337a",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Clickjacking/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Client Side Path Traversal/README.md",
+          "bytes": 5800,
+          "lines": 72,
+          "sha256": "98ed7e265f375a5251e95ba225255697a69c37a533092a820e94ae2d9b4b1e51",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Client%20Side%20Path%20Traversal/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Command Injection/README.md",
+          "bytes": 16695,
+          "lines": 476,
+          "sha256": "90ce8a7d48c390dc897de5e62576de27c9ec049dd588ae85438a932bb556c87c",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Command%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Cross-Site Request Forgery/README.md",
+          "bytes": 8727,
+          "lines": 162,
+          "sha256": "7b0b71b42e81ca1a22c867e8a0e98cfb8ca312d2af778f27ba711eb2db0c189a",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Cross-Site%20Request%20Forgery/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "DISCLAIMER.md",
+          "bytes": 1027,
+          "lines": 11,
+          "sha256": "20ac5b5c63a98a1126ad002ca96de7956a4dd8ebde435e6843d9a30aed577b0d",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/DISCLAIMER.md",
+          "review_level": "supporting_index_not_a_project_security_requirement"
+        },
+        {
+          "path": "DNS Rebinding/README.md",
+          "bytes": 4581,
+          "lines": 96,
+          "sha256": "da778b0373fb6862a5e2f8fcfb3bde5a179e0022fc635ee00242ce3f422ef111",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/DNS%20Rebinding/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "DOM Clobbering/README.md",
+          "bytes": 4868,
+          "lines": 145,
+          "sha256": "01c6e092db337007adf9edb029c53687ba16917c1388c16309c0ff3e3c10cb42",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/DOM%20Clobbering/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Denial of Service/README.md",
+          "bytes": 4830,
+          "lines": 101,
+          "sha256": "17ca81128966f9e9b88dc4fe3482692d791951a1b2a2ef75dc5af876805937cb",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Denial%20of%20Service/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Dependency Confusion/README.md",
+          "bytes": 2321,
+          "lines": 39,
+          "sha256": "fa5e5f25de9bb031b44aa1b9ab946236a4da89461005fe4764d672abd757a1ac",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Dependency%20Confusion/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Directory Traversal/README.md",
+          "bytes": 13006,
+          "lines": 355,
+          "sha256": "e32fcb1d1744bf133cc112062015dc5686a280ebc48d1cc3befeba0c5eef24bb",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Directory%20Traversal/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Encoding Transformations/README.md",
+          "bytes": 6237,
+          "lines": 111,
+          "sha256": "4def2e1d6b9cefa074952b536eced85ac87939cef5ad5b05d00c323fa47c65e1",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Encoding%20Transformations/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "External Variable Modification/README.md",
+          "bytes": 3692,
+          "lines": 98,
+          "sha256": "d7d1a6cb10ad6185e515825877d081cfcb31b5ac1fa023ee314134a9c4d2b10a",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/External%20Variable%20Modification/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "File Inclusion/LFI-to-RCE.md",
+          "bytes": 11659,
+          "lines": 303,
+          "sha256": "92c90735331c2a90700f3bdf49b6317e86174f0278b0c8dce85166908818ecd1",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/File%20Inclusion/LFI-to-RCE.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "File Inclusion/README.md",
+          "bytes": 6721,
+          "lines": 145,
+          "sha256": "ef8cf45b3453ecd8baea2413ccb0e400e33fe7ae86cd7bd731af342db2a892b5",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/File%20Inclusion/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "File Inclusion/Wrappers.md",
+          "bytes": 20042,
+          "lines": 275,
+          "sha256": "35ca7f5a54ffaf5c90458c2f2a799afd8667c52e62a7cd2623ad9c3ae2098d34",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/File%20Inclusion/Wrappers.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Google Web Toolkit/README.md",
+          "bytes": 2755,
+          "lines": 64,
+          "sha256": "7086ba96670836ab0d331c637980fd42ac1174ebd854208360e0df5718e71b10",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Google%20Web%20Toolkit/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "GraphQL Injection/README.md",
+          "bytes": 22927,
+          "lines": 495,
+          "sha256": "0c1fd369383ad9fbcbcac588b1fffc5e6763a2fb24ad18fc5382e7b2f02e7fbc",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/GraphQL%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "HTTP Parameter Pollution/README.md",
+          "bytes": 4639,
+          "lines": 100,
+          "sha256": "b9ac161c484969cabcd3a181fdad8f999e2cc42009bd6b4c51765c4d687ec18b",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/HTTP%20Parameter%20Pollution/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Headless Browser/README.md",
+          "bytes": 9420,
+          "lines": 192,
+          "sha256": "095345f4549ed6a340023ea74f55d3bc242a52661b3757cc3e1cebae211cd401",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Headless%20Browser/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Hidden Parameters/README.md",
+          "bytes": 2457,
+          "lines": 50,
+          "sha256": "09a89cf3f7f041757590a113ca95beb9d188e4d63a42c6bfe88c41550f1dbea8",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Hidden%20Parameters/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Insecure Deserialization/DotNET.md",
+          "bytes": 10729,
+          "lines": 185,
+          "sha256": "29cd146d289842134a9bc18a42b4ad7328dd7f1822aebb62e8b9bfb409f472b3",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Deserialization/DotNET.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Insecure Deserialization/Java.md",
+          "bytes": 24699,
+          "lines": 315,
+          "sha256": "6475f474434227e927ba33ccfc80fcbb2a667ffe63ced49773004ccceeab405c",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Deserialization/Java.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Insecure Deserialization/Node.md",
+          "bytes": 2313,
+          "lines": 55,
+          "sha256": "8f3cfe140e8743e4fe3f55c3c2dd88ee84293779a2f2d13ad04824f8ae8165d2",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Deserialization/Node.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Insecure Deserialization/PHP.md",
+          "bytes": 15000,
+          "lines": 261,
+          "sha256": "7de3402e2bdd408178d506c3eeaa00460a3f3a9e91abff66c6ed12e324cea63b",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Deserialization/PHP.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Insecure Deserialization/Python.md",
+          "bytes": 5410,
+          "lines": 136,
+          "sha256": "4d94cca75d54064108e4fe054e20813017dd34cba39aac43246e6e5ffc822d93",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Deserialization/Python.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Insecure Deserialization/README.md",
+          "bytes": 4930,
+          "lines": 60,
+          "sha256": "e357dbbb23e4c19f398fa5b3de7514e3eea4e1613d548b930fe32e2d67e0d593",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Deserialization/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Insecure Deserialization/Ruby.md",
+          "bytes": 4227,
+          "lines": 96,
+          "sha256": "bfffb350e2298d1d2ba66cb3f4f0154830918c817a661a325191c0c9fb7485d7",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Deserialization/Ruby.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Insecure Direct Object References/README.md",
+          "bytes": 7428,
+          "lines": 129,
+          "sha256": "b30662eb9a7a201c2eb15e320e777269c365f37ca793de5a39ecc758f4f01150",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Direct%20Object%20References/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Insecure Management Interface/README.md",
+          "bytes": 2516,
+          "lines": 42,
+          "sha256": "ad92fd867e7cc75857b9d4279e31479ed81b3084196122717fd80ba26f8cf90f",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Management%20Interface/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Insecure Randomness/README.md",
+          "bytes": 10005,
+          "lines": 209,
+          "sha256": "32da36c173a20756b52b4b2749b4c42010e9a4773843fde255abfbd1a96d963f",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Randomness/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Insecure Source Code Management/Bazaar.md",
+          "bytes": 1457,
+          "lines": 52,
+          "sha256": "4a4ec21bc396f5ebda4cd01b588331278c17d1ce07edf29db858719ec8978ec2",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Source%20Code%20Management/Bazaar.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Insecure Source Code Management/Git.md",
+          "bytes": 8443,
+          "lines": 249,
+          "sha256": "06a5b707e327a211722aae8474e143c7bdbd7e42f9e24d010c9a8c57c7001b1e",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Source%20Code%20Management/Git.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Insecure Source Code Management/Mercurial.md",
+          "bytes": 909,
+          "lines": 23,
+          "sha256": "af28e529aa640dbad4e63c4d1a5fca0bc32ea0ee6e9c19211c86b4f82922de3b",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Source%20Code%20Management/Mercurial.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Insecure Source Code Management/README.md",
+          "bytes": 2383,
+          "lines": 49,
+          "sha256": "a795b519d25bb311a0dee5d382246cbfea6ae21838ffc3261281751f15c12b00",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Source%20Code%20Management/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Insecure Source Code Management/Subversion.md",
+          "bytes": 1709,
+          "lines": 39,
+          "sha256": "f424c8149f1ebb1aa6ad7ba6e27ad408e1c4825e215f513e818a8fc92611507f",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Insecure%20Source%20Code%20Management/Subversion.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "JSON Web Token/README.md",
+          "bytes": 28374,
+          "lines": 541,
+          "sha256": "72a9a3a755682c462d324f564c0181466fcb1253c8352157c0b894e84bfcb2eb",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/JSON%20Web%20Token/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Java RMI/README.md",
+          "bytes": 7152,
+          "lines": 145,
+          "sha256": "77b7f2f95bda57a4c52de8c1b411607f15b0efa0c24b85265e60ec3eddc8de00",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Java%20RMI/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "LDAP Injection/README.md",
+          "bytes": 6694,
+          "lines": 174,
+          "sha256": "225a07254406adc7bfc57d34d9266548a94ecdfc4d58f497d1ee0df32b1a511b",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/LDAP%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "LaTeX Injection/README.md",
+          "bytes": 3647,
+          "lines": 137,
+          "sha256": "fdd8961a70f549e71075b0633c9b2a7c5d827907ac949a751a0ab271723786bd",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/LaTeX%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Mass Assignment/README.md",
+          "bytes": 2263,
+          "lines": 39,
+          "sha256": "11350bc21519f91a0df19b2a743e02306cbbc3274e088a5f375bfee2ecc79251",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Mass%20Assignment/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Methodology and Resources/Active Directory Attack.md",
+          "bytes": 5913,
+          "lines": 51,
+          "sha256": "9f3040a20bd3f2348e0e2852c2d5de18c557d2dcc51912a338878c67a5625c99",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Active%20Directory%20Attack.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Bind Shell Cheatsheet.md",
+          "bytes": 1183,
+          "lines": 13,
+          "sha256": "2cf75854ebeb16a0f94b82e7d811961e232b4b0aed12a99dd57c478988461b81",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Bind%20Shell%20Cheatsheet.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Cloud - AWS Pentest.md",
+          "bytes": 1494,
+          "lines": 17,
+          "sha256": "ce86955f8c00f8a26e42874405e85b021772caf9d89ee2bd1a389fbc40cfc681",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Cloud%20-%20AWS%20Pentest.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Cloud - Azure Pentest.md",
+          "bytes": 1003,
+          "lines": 12,
+          "sha256": "ce96412fcb91b27ba9c9c094ddd09a0797290300294036518a70fbf62733f057",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Cloud%20-%20Azure%20Pentest.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Cobalt Strike - Cheatsheet.md",
+          "bytes": 3562,
+          "lines": 32,
+          "sha256": "b61cec1a8ded58d43698e8e1340f1fd7cbb60dfc47a364e2cca4229adc6ba2f3",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Cobalt%20Strike%20-%20Cheatsheet.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Container - Docker Pentest.md",
+          "bytes": 1531,
+          "lines": 14,
+          "sha256": "2c1f40e8cd44b6725ae208bfb6109791504d968e310fdd577bbdef161db763ca",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Container%20-%20Docker%20Pentest.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Container - Kubernetes Pentest.md",
+          "bytes": 779,
+          "lines": 9,
+          "sha256": "aaf315f2a23d68bf7ea1d4a8f094f4f49f6e2631c81ceff35fb7685444e2861f",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Container%20-%20Kubernetes%20Pentest.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Escape Breakout.md",
+          "bytes": 1721,
+          "lines": 16,
+          "sha256": "0a9a2687108ec571b80361d18463dc566a5097372962766197b12a2aaec879eb",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Escape%20Breakout.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/HTML Smuggling.md",
+          "bytes": 440,
+          "lines": 6,
+          "sha256": "fdbfe7797d4e63c9908b41e503854d4bd45862ccaf0cd3e6c5b69d07eb6df6f7",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/HTML%20Smuggling.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Hash Cracking.md",
+          "bytes": 1332,
+          "lines": 15,
+          "sha256": "1fbdd12a6955833eb69bf18192b7a6dfe4313e17abe0fb7eb51306f4f5100968",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Hash%20Cracking.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Initial Access.md",
+          "bytes": 1015,
+          "lines": 11,
+          "sha256": "4e70a312866367d736374f54e7b36c637363b19b9aece666ab9b830f7f46cce5",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Initial%20Access.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Linux - Evasion.md",
+          "bytes": 657,
+          "lines": 8,
+          "sha256": "1daa5b1061ab575da8f934eb102d958cfb32325eae92de72e6e8957608f3e8b7",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Linux%20-%20Evasion.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Linux - Persistence.md",
+          "bytes": 2186,
+          "lines": 18,
+          "sha256": "924b24b5c77c3248a5d27e274675c78b9b06f0174429372c195a82b400db0d1b",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Linux%20-%20Persistence.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Linux - Privilege Escalation.md",
+          "bytes": 6661,
+          "lines": 50,
+          "sha256": "492074ae106f8a5107b03026ef13bf59bb8207571c0216a7093ed51864cd6a3b",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Linux%20-%20Privilege%20Escalation.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/MSSQL Server - Cheatsheet.md",
+          "bytes": 9287,
+          "lines": 61,
+          "sha256": "61551f86aefce30653d9aa3665513440708913e66092bd2d805d9e2580c3125b",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/MSSQL%20Server%20-%20Cheatsheet.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Metasploit - Cheatsheet.md",
+          "bytes": 2488,
+          "lines": 23,
+          "sha256": "5581114b116c0c56a0440cf53c9f4c955c0184db04e6b4dc0704a295c5d7d4e0",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Metasploit%20-%20Cheatsheet.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Methodology and enumeration.md",
+          "bytes": 972,
+          "lines": 17,
+          "sha256": "9657987f2858e3ab5b7cefb0291dc6da39fa8fa2d36d7f474f10879fde3aa794",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Methodology%20and%20enumeration.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Network Discovery.md",
+          "bytes": 1329,
+          "lines": 14,
+          "sha256": "b449a9db3c78329a82701aa0dfcbf191d6423b11681cdca74ba123cddbe61f57",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Network%20Discovery.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Network Pivoting Techniques.md",
+          "bytes": 3581,
+          "lines": 29,
+          "sha256": "1285a53e997df38af1fb153bcb6c4a24aedfd96dcdd897db0dc130c4e1fd5eb4",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Network%20Pivoting%20Techniques.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Office - Attacks.md",
+          "bytes": 4696,
+          "lines": 37,
+          "sha256": "2322c8f489feaf810c7678b90452a4d5156ce608bd9af3a42c5d9a23b423f282",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Office%20-%20Attacks.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Powershell - Cheatsheet.md",
+          "bytes": 2127,
+          "lines": 17,
+          "sha256": "83ce2205b27fee06bc95f1ce4cce2010be9485e8aadfaacd46b115dea3e0aef1",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Powershell%20-%20Cheatsheet.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Reverse Shell Cheatsheet.md",
+          "bytes": 4923,
+          "lines": 43,
+          "sha256": "c579d1dd7e83cb33836f7aec4111fdd99b070d81336990130e5241ea41e014b1",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Reverse%20Shell%20Cheatsheet.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Source Code Management.md",
+          "bytes": 1124,
+          "lines": 13,
+          "sha256": "d0d58a3ea925c429479bdef6b55ca73d675d5e712ccbe9bbcac264d6ac6af811",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Source%20Code%20Management.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Vulnerability Reports.md",
+          "bytes": 872,
+          "lines": 9,
+          "sha256": "c07b7fe3030c60e2e9c7603055360f318f894946df2d3ed3d6ec0dbe0e0dbfd5",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Vulnerability%20Reports.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Web Attack Surface.md",
+          "bytes": 1306,
+          "lines": 12,
+          "sha256": "490a51111be2cfcbd4b7f9e66c3defcedb71ec1782b39375ed10c7c7d1d61069",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Web%20Attack%20Surface.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Windows - AMSI Bypass.md",
+          "bytes": 2978,
+          "lines": 21,
+          "sha256": "1affeaeb6ff0863abb70b7d62e0943055f7f86c35c6fe111eb98be0095057d27",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Windows%20-%20AMSI%20Bypass.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Windows - DPAPI.md",
+          "bytes": 977,
+          "lines": 9,
+          "sha256": "3e8b4702b13a0d488af480361e6112d72fbc816fe0dffea8bb8a22835ed00972",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Windows%20-%20DPAPI.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Windows - Defenses.md",
+          "bytes": 2255,
+          "lines": 19,
+          "sha256": "ece4f5e73fd92e24569bf98174d5bd9dfb6fab0f4a0064318836d0f00ac3435d",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Windows%20-%20Defenses.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Windows - Download and Execute.md",
+          "bytes": 1804,
+          "lines": 17,
+          "sha256": "a1492d31cb6a5fe3a85dd493ace093aa656be002b0a5dcc638af8efa21c331eb",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Windows%20-%20Download%20and%20Execute.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Windows - Mimikatz.md",
+          "bytes": 2193,
+          "lines": 20,
+          "sha256": "9d57d841aa3f27b6dece3aaec1dce8795954421e72b921d60eb445f9f937780a",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Windows%20-%20Mimikatz.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Windows - Persistence.md",
+          "bytes": 5074,
+          "lines": 40,
+          "sha256": "5829bc963944523150e1326767f493d2d2d058363b6f8897f398ed2bb072938c",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Windows%20-%20Persistence.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Windows - Privilege Escalation.md",
+          "bytes": 10555,
+          "lines": 68,
+          "sha256": "61252e2a0fae9e68979ea487263583d2424bba6a800abeca3b4cbf25794afac9",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Windows%20-%20Privilege%20Escalation.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "Methodology and Resources/Windows - Using credentials.md",
+          "bytes": 3200,
+          "lines": 28,
+          "sha256": "31e3835bf9dbcbb8a4968433da0230d25bf6a2183b48aeeceaed85d6c4662d61",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Methodology%20and%20Resources/Windows%20-%20Using%20credentials.md",
+          "review_level": "moved_page_index_only"
+        },
+        {
+          "path": "NoSQL Injection/README.md",
+          "bytes": 8245,
+          "lines": 247,
+          "sha256": "74f4d5ae8022206c8c6a164a95d1622788e7c5c1f661f6abf25e80e99e1fac7d",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/NoSQL%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "OAuth Misconfiguration/README.md",
+          "bytes": 5398,
+          "lines": 81,
+          "sha256": "5f440f52e4d05a3c980c0189c3ecd3b0dd320b79e1fe6fdf14d8d44cb646c827",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/OAuth%20Misconfiguration/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "ORM Leak/README.md",
+          "bytes": 7749,
+          "lines": 235,
+          "sha256": "7afcd36940d72e5e448197314c15c48bb53ee0d7d100c121c96c6e4313ce69d8",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/ORM%20Leak/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Open Redirect/README.md",
+          "bytes": 8087,
+          "lines": 185,
+          "sha256": "d46052ffaa71ad7b29fd36f22c0bb2f013e36d04b337af9016386e0ba1ae2889",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Open%20Redirect/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Prompt Injection/README.md",
+          "bytes": 19007,
+          "lines": 214,
+          "sha256": "26d19f69de43ad3d8dc6eca64bf6158cddbd9c2e063c30bba8b5d72fb3978b0e",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Prompt%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Prototype Pollution/README.md",
+          "bytes": 10223,
+          "lines": 191,
+          "sha256": "93d6a3bc7c4db3e6ae430933ecb71547992a4b5c2daf77fd38fd68a4da82b3ef",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Prototype%20Pollution/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "README.md",
+          "bytes": 4198,
+          "lines": 53,
+          "sha256": "06839699ccb5b5adc279883e88e4c348a3344526c65ee0c5e041bed147def0cd",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/README.md",
+          "review_level": "full_root_readme"
+        },
+        {
+          "path": "Race Condition/README.md",
+          "bytes": 8396,
+          "lines": 165,
+          "sha256": "38541defa5c86d0c878e8824861055c4616f756657621781668e1b9c5e9b1e3f",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Race%20Condition/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Regular Expression/README.md",
+          "bytes": 4414,
+          "lines": 103,
+          "sha256": "f964a81d986574ef18922340e0b49c3831de25e6ca29f0df79902f52c489a64c",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Regular%20Expression/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Request Smuggling/README.md",
+          "bytes": 8154,
+          "lines": 181,
+          "sha256": "93eedac9212197a385d3cc78092d2e7ce8749c8883e600f6eccbadccb14304c5",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Request%20Smuggling/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Reverse Proxy Misconfigurations/README.md",
+          "bytes": 6994,
+          "lines": 165,
+          "sha256": "4b115b6ec779894ff2077ae19f85f78f69008a61e31f3ce734361af9289249fe",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Reverse%20Proxy%20Misconfigurations/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "SAML Injection/README.md",
+          "bytes": 11724,
+          "lines": 200,
+          "sha256": "22b784d03e007a5221a8737d6f176734d22d9915309adf72552b73c7afa3bc00",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/SAML%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "SQL Injection/BigQuery Injection.md",
+          "bytes": 3591,
+          "lines": 64,
+          "sha256": "fc9cef25a620ae18f26192c9d8edf2701617b157d942a47bce1d1fdea1df328f",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/SQL%20Injection/BigQuery%20Injection.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "SQL Injection/Cassandra Injection.md",
+          "bytes": 2098,
+          "lines": 57,
+          "sha256": "882be729ef636092c63f4f8998d9b44692957f459050f419c23191990e50e319",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/SQL%20Injection/Cassandra%20Injection.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "SQL Injection/DB2 Injection.md",
+          "bytes": 9065,
+          "lines": 141,
+          "sha256": "0aa65437f7b0161c3d22dc8b13ce82a8ec73068c9980721c5695e7dbabade9eb",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/SQL%20Injection/DB2%20Injection.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "SQL Injection/MSSQL Injection.md",
+          "bytes": 17244,
+          "lines": 443,
+          "sha256": "8aa71b7ce2f251cd54853739f81aeefe7b9e0deae493bdaeca10fd1e7fbadbf1",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/SQL%20Injection/MSSQL%20Injection.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "SQL Injection/MySQL Injection.md",
+          "bytes": 36260,
+          "lines": 775,
+          "sha256": "8fd90e87a6ccce3dde2b673492c0b975296a16d90f1c8f5833a63e4b2f0fc6d9",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/SQL%20Injection/MySQL%20Injection.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "SQL Injection/OracleSQL Injection.md",
+          "bytes": 14293,
+          "lines": 236,
+          "sha256": "d11a3b01c41ca38acba3ec20c5b3985cfd4a81269c285ce9ce1c05ba2e851871",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/SQL%20Injection/OracleSQL%20Injection.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "SQL Injection/PostgreSQL Injection.md",
+          "bytes": 13227,
+          "lines": 292,
+          "sha256": "df10acafdc75ef880f8090df8a65424b692785f8fbf497e5656dc900e7ba3265",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/SQL%20Injection/PostgreSQL%20Injection.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "SQL Injection/README.md",
+          "bytes": 33229,
+          "lines": 597,
+          "sha256": "8f68e5b948ca8a253527e98542e022c03028f481ea287d9fbf79044a26b140e3",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/SQL%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "SQL Injection/SQLite Injection.md",
+          "bytes": 8703,
+          "lines": 155,
+          "sha256": "f6bad93117b22ac5575260d55967cb030f2780d8dcb70f5a9a5e16e82f1dbf36",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/SQL%20Injection/SQLite%20Injection.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "SQL Injection/SQLmap.md",
+          "bytes": 22897,
+          "lines": 349,
+          "sha256": "180fc46b1dcae16dff1c0fd4bf4b731c9d25377cc9baa6caeb19be6c20c9a5f4",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/SQL%20Injection/SQLmap.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Server Side Include Injection/README.md",
+          "bytes": 6355,
+          "lines": 75,
+          "sha256": "1bf33a1dd59c1714814e1895c6af20cf4081a5452085a133a6358408f4c74e61",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Server%20Side%20Include%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Server Side Request Forgery/README.md",
+          "bytes": 20648,
+          "lines": 479,
+          "sha256": "91d3ecd0ca7c45382415de7fe676205162cd31bfd24453251fa3492e4fb80324",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Server%20Side%20Request%20Forgery/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Server Side Request Forgery/SSRF-Advanced-Exploitation.md",
+          "bytes": 7415,
+          "lines": 168,
+          "sha256": "59e7475347527cdb94edbb810856d56ef9e677c542f5b01246db328474f029e7",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Server%20Side%20Request%20Forgery/SSRF-Advanced-Exploitation.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Server Side Request Forgery/SSRF-Cloud-Instances.md",
+          "bytes": 11978,
+          "lines": 333,
+          "sha256": "f6b20e634d4ae9864a356146b2b5d66a5f17ac690c359fc4fdeb506976db8c17",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Server%20Side%20Request%20Forgery/SSRF-Cloud-Instances.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Server Side Template Injection/ASP.md",
+          "bytes": 1285,
+          "lines": 34,
+          "sha256": "0d97a2de9133f2837f9dd47ce48eba652b2e71b5a2d32760dce41b81727f3dcf",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Server%20Side%20Template%20Injection/ASP.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Server Side Template Injection/Elixir.md",
+          "bytes": 2238,
+          "lines": 66,
+          "sha256": "a29d7eefc8c665627c9323fe9f10111eab443e7ab4a87eff145302c7530f13e5",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Server%20Side%20Template%20Injection/Elixir.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Server Side Template Injection/Java.md",
+          "bytes": 22545,
+          "lines": 525,
+          "sha256": "19ee3b4f55b6becd396c3c1d24e4bc9206faaa355673880307bdd1cd049d157a",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Server%20Side%20Template%20Injection/Java.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Server Side Template Injection/JavaScript.md",
+          "bytes": 5487,
+          "lines": 172,
+          "sha256": "0bfcd42e2dd6be8e112ccc7ceeac4a2db8f373c3faaa7b5c1a0504516377d592",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Server%20Side%20Template%20Injection/JavaScript.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Server Side Template Injection/PHP.md",
+          "bytes": 10594,
+          "lines": 346,
+          "sha256": "189cf30c7e41cdc74e910d8e27de21526b656c17e2966aaab677616289dcaf43",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Server%20Side%20Template%20Injection/PHP.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Server Side Template Injection/Python.md",
+          "bytes": 18965,
+          "lines": 466,
+          "sha256": "c4b2c65a28f1e723a5271d30760f7b936f302648683061a7e9b8489d1a1f1b30",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Server%20Side%20Template%20Injection/Python.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Server Side Template Injection/README.md",
+          "bytes": 12104,
+          "lines": 228,
+          "sha256": "04f98964df72bd8701e348fd5533985c3e588fa299972c3b7e1008df3d6f3cf0",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Server%20Side%20Template%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Server Side Template Injection/Ruby.md",
+          "bytes": 2693,
+          "lines": 91,
+          "sha256": "1d541d983ca86c72f28efddc368502c53f087a4a787306c2c7bc48b7f3fe1d32",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Server%20Side%20Template%20Injection/Ruby.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Tabnabbing/README.md",
+          "bytes": 2294,
+          "lines": 41,
+          "sha256": "465f8693ecc4b10f20fc5cdc2115268e19b3df0783218447ac391eaa79ac4b2f",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Tabnabbing/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Type Juggling/README.md",
+          "bytes": 10456,
+          "lines": 160,
+          "sha256": "35479a824e9f29eef432a410a04d8cc261ca5f162a94f6b36017d94780c49867",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Type%20Juggling/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Upload Insecure Files/Configuration Apache .htaccess/README.md",
+          "bytes": 3436,
+          "lines": 78,
+          "sha256": "f2befce91aaa42bb0edb5915543c1f856b080acfd6d0e2aeac9f1fb2a9052047",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Upload%20Insecure%20Files/Configuration%20Apache%20.htaccess/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Upload Insecure Files/README.md",
+          "bytes": 20082,
+          "lines": 413,
+          "sha256": "c280777ce851edab0c2e39bdbe038fdf47741d456fdf850b79f06535b80a980e",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Upload%20Insecure%20Files/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Virtual Hosts/README.md",
+          "bytes": 3631,
+          "lines": 93,
+          "sha256": "65a86ba2ec291682100f7d5cf24b0c1697567affda262edb3d57a679ccd23cd3",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Virtual%20Hosts/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Web Cache Deception/README.md",
+          "bytes": 8574,
+          "lines": 151,
+          "sha256": "c140312d14ec74b56ba45a2c04d86c9cfaba457262b72c0fdc1f8c2bc7bbbec3",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Web%20Cache%20Deception/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "Web Sockets/README.md",
+          "bytes": 8034,
+          "lines": 171,
+          "sha256": "1ba3caa102fa5779d7e93d4f4dcf793676e8c22e43345a26fa34399d66de90c7",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Web%20Sockets/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "XPATH Injection/README.md",
+          "bytes": 2676,
+          "lines": 79,
+          "sha256": "ffb4813b1ee0f69fad39b3aadb97029382dc2c916fc282626bac982c5b4ca5b0",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/XPATH%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "XS-Leak/README.md",
+          "bytes": 10636,
+          "lines": 129,
+          "sha256": "039e482146fabf43a63039a7d542250c58e83da731c9815aa6200b749c1aea7d",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/XS-Leak/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "XSLT Injection/README.md",
+          "bytes": 9082,
+          "lines": 252,
+          "sha256": "dfd3ed5d4b961692758f1fe3a7d84d5e04e0e8ed492cf60e4183e898efe221d9",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/XSLT%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "XSS Injection/1 - XSS Filter Bypass.md",
+          "bytes": 17833,
+          "lines": 582,
+          "sha256": "f8e40d7dbdff25eae40ab8fb8c2e9833c9c6a86d1e81c48536ac03b2254c7fb2",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/XSS%20Injection/1%20-%20XSS%20Filter%20Bypass.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "XSS Injection/2 - XSS Polyglot.md",
+          "bytes": 5013,
+          "lines": 86,
+          "sha256": "e41979c882cc807edb05464575894e87c410ab7444facd45d35accc2bda9dcb1",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/XSS%20Injection/2%20-%20XSS%20Polyglot.md",
+          "review_level": "selected_examples"
+        },
+        {
+          "path": "XSS Injection/3 - XSS Common WAF Bypass.md",
+          "bytes": 3139,
+          "lines": 120,
+          "sha256": "3ae9c2aed72e2dc37fb3fe12eea34de6c2be7cbe4966552da9693010d79fb6fa",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/XSS%20Injection/3%20-%20XSS%20Common%20WAF%20Bypass.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "XSS Injection/4 - CSP Bypass.md",
+          "bytes": 7006,
+          "lines": 179,
+          "sha256": "8c8b411bf02615f4b63f59800a2c7082bd54ce2cb60400b988bf24b1f143b558",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/XSS%20Injection/4%20-%20CSP%20Bypass.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "XSS Injection/5 - XSS in Angular.md",
+          "bytes": 11148,
+          "lines": 341,
+          "sha256": "7ca2092189240095a7b1235ee3d82fa515a2efe82d8185df81d4b524d9c23b32",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/XSS%20Injection/5%20-%20XSS%20in%20Angular.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "XSS Injection/README.md",
+          "bytes": 29616,
+          "lines": 610,
+          "sha256": "c91931c0c75171cbad660b9eaf0483fe56013e9e98e9d229e25e9c25e9a49cdb",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/XSS%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "XXE Injection/README.md",
+          "bytes": 29004,
+          "lines": 688,
+          "sha256": "f45c8be89e2b9ca59181eee970c872fe94d7c249a38a827ab06b71a6311c05ec",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/XXE%20Injection/README.md",
+          "review_level": "technical_explanations_and_sections_not_all_payload_blocks"
+        },
+        {
+          "path": "Zip Slip/README.md",
+          "bytes": 2420,
+          "lines": 48,
+          "sha256": "5eb17ea19e7a5da8762bceedf4957e84d2f1d7feeaf370b3d8d33be7f970a884",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/Zip%20Slip/README.md",
+          "review_level": "detailed_technical_body"
+        },
+        {
+          "path": "_LEARNING_AND_SOCIALS/BOOKS.md",
+          "bytes": 6505,
+          "lines": 64,
+          "sha256": "b60e89af11a1d112122581208986f23acfd034cad45bb078d7e5957d1ada8a3a",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/_LEARNING_AND_SOCIALS/BOOKS.md",
+          "review_level": "supporting_index_not_a_project_security_requirement"
+        },
+        {
+          "path": "_LEARNING_AND_SOCIALS/TWITTER.md",
+          "bytes": 3064,
+          "lines": 31,
+          "sha256": "c326f23fd6bf4c1dc252c44d781b64595aa2758537eac36931edbb0b8dc85b06",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/_LEARNING_AND_SOCIALS/TWITTER.md",
+          "review_level": "supporting_index_not_a_project_security_requirement"
+        },
+        {
+          "path": "_LEARNING_AND_SOCIALS/YOUTUBE.md",
+          "bytes": 4394,
+          "lines": 66,
+          "sha256": "4abe26a1312632fe99765f3de2b1543f705ec75e5aeceb2a84c4edfa3037cde6",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/_LEARNING_AND_SOCIALS/YOUTUBE.md",
+          "review_level": "supporting_index_not_a_project_security_requirement"
+        },
+        {
+          "path": "_template_vuln/README.md",
+          "bytes": 783,
+          "lines": 39,
+          "sha256": "ca5b191c2607b3269ad4ecd9520e6d46dcdea240caec5a96ada9ccc99d479065",
+          "url": "https://raw.githubusercontent.com/swisskyrepo/PayloadsAllTheThings/3ac27901c711bdf3f5b65a7b1d1820a1f65bd09a/_template_vuln/README.md",
+          "review_level": "supporting_index_not_a_project_security_requirement"
+        }
+      ]
+    }
+  ]
+}

@@ -2,6 +2,11 @@
 
 This guide describes deployment on a physical Windows server.
 
+Read [SECURITY.md](SECURITY.md) before exposing the server. It contains the current
+hardening changes, test results, backup/upgrade steps, and remaining server checks.
+Never serve the project directory directly from IIS.
+For subsequent releases, follow [REDEPLOY.md](REDEPLOY.md), including backups and rollback.
+
 Recommended stack:
 
 1. Windows Server 2019/2022 or Windows 10/11 Pro on a physical machine
@@ -60,8 +65,7 @@ If the project is copied manually, place it in `C:\plit99\app`.
 ```powershell
 py -3.11 -m venv C:\plit99\venv
 C:\plit99\venv\Scripts\Activate.ps1
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+python -m pip install --only-binary=:all: -r requirements.txt
 ```
 
 If PowerShell blocks activation, run:
@@ -77,12 +81,27 @@ Open `psql` from the Start menu or run it from the PostgreSQL `bin` folder.
 Run:
 
 ```sql
-CREATE DATABASE plit99_db;
-CREATE USER plit99_user WITH PASSWORD 'change-this-password';
+CREATE ROLE plit99_owner LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE;
+CREATE ROLE plit99_user LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE;
+\password plit99_owner
+\password plit99_user
+CREATE DATABASE plit99_db OWNER plit99_owner;
+\connect plit99_db
+REVOKE ALL ON DATABASE plit99_db FROM PUBLIC;
+GRANT CONNECT ON DATABASE plit99_db TO plit99_user;
+REVOKE CREATE ON SCHEMA public FROM PUBLIC;
+GRANT USAGE, CREATE ON SCHEMA public TO plit99_owner;
+GRANT USAGE ON SCHEMA public TO plit99_user;
+ALTER DEFAULT PRIVILEGES FOR ROLE plit99_owner IN SCHEMA public
+  GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO plit99_user;
+ALTER DEFAULT PRIVILEGES FOR ROLE plit99_owner IN SCHEMA public
+  GRANT USAGE, SELECT ON SEQUENCES TO plit99_user;
 ALTER ROLE plit99_user SET client_encoding TO 'UTF8';
 ALTER ROLE plit99_user SET default_transaction_isolation TO 'read committed';
 ALTER ROLE plit99_user SET timezone TO 'Asia/Bishkek';
-GRANT ALL PRIVILEGES ON DATABASE plit99_db TO plit99_user;
+-- For an existing database, also grant on the already-created application tables:
+GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO plit99_user;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO plit99_user;
 ```
 
 ## 5. Create Data Directory
@@ -99,18 +118,25 @@ Production example:
 
 ```text
 DEBUG=False
+APP_ENV=production
 SECRET_KEY=replace-with-a-long-random-secret
 ALLOWED_HOSTS=your-domain.com,www.your-domain.com,server-ip,localhost,127.0.0.1
 CSRF_TRUSTED_ORIGINS=https://your-domain.com,https://www.your-domain.com
 APP_DATA_DIR=C:\plit99\data
-DATABASE_URL=postgresql://plit99_user:change-this-password@127.0.0.1:5432/plit99_db
+PYTHON_EXECUTABLE=C:/plit99/venv/Scripts/python.exe
+DATABASE_URL=postgresql://APP_USER:URL_ENCODED_PASSWORD@DB_HOST/plit99_db?sslmode=verify-full
 SERVE_MEDIA_FILES=True
 WAITRESS_PORT=8000
 WAITRESS_THREADS=4
-DJANGO_SUPERUSER_USERNAME=admin
-DJANGO_SUPERUSER_EMAIL=admin@example.com
-DJANGO_SUPERUSER_PASSWORD=change-this-too
+WAITRESS_HOST=127.0.0.1
+WAITRESS_TRUSTED_PROXY=127.0.0.1
+TRUST_PROXY_HEADERS=False
 ```
+
+Configure a trusted PostgreSQL CA/certificate matching DB_HOST. Generate a random
+SECRET_KEY of at least 50 characters. Create the administrator interactively after
+migrations; existing passwords are not changed automatically. Give the service account only the required NTFS
+rights; Unix permission bits alone do not configure Windows ACLs.
 
 For a local-only test you may keep SQLite:
 
@@ -125,9 +151,19 @@ For a real public website, PostgreSQL is recommended.
 ```powershell
 Set-Location C:\plit99\app
 C:\plit99\venv\Scripts\Activate.ps1
+# Supply MIGRATION_DATABASE_URL through a protected operator environment for
+# PostgreSQL DDL as plit99_owner. Do not put the owner password in service .env.
 .\build.ps1
-python manage.py create_admin_if_missing
+if (-not $?) { throw "Build failed; do not start the service." }
+Remove-Item Env:MIGRATION_DATABASE_URL -ErrorAction SilentlyContinue
+.\manage.ps1 createsuperuser
 ```
+
+Build defaults to `APP_ENV=production`, installs pinned wheels, checks settings,
+collects the production static manifest and applies migrations. Service startup
+checks for unapplied migrations and refuses to listen if any remain. It does not
+create accounts or apply schema changes. The management wrapper loads the same
+`.env` and Python interpreter as the service; plain `python manage.py` does not load `.env`.
 
 ## 8. Test Waitress Manually
 
@@ -137,7 +173,10 @@ C:\plit99\venv\Scripts\Activate.ps1
 .\start.ps1
 ```
 
-Open:
+For production, verify through the HTTPS IIS endpoint. Direct HTTP requests to
+Waitress redirect to HTTPS; Waitress itself does not terminate TLS. For an isolated
+local test, use `python manage.py runserver` with `APP_ENV=local` and the local
+HTTPS/cookie flags disabled in that test process only:
 
 ```text
 http://127.0.0.1:8000/
@@ -208,6 +247,14 @@ Pattern: (.*)
 Rewrite URL: http://127.0.0.1:8000/{R:1}
 ```
 
+IIS must strip client X-Forwarded-For/X-Forwarded-Proto and supply the actual client
+address and HTTPS scheme. Waitress trusts only WAITRESS_TRUSTED_PROXY, never `*`.
+Preserve the original validated public Host header when proxying; verify it matches
+ALLOWED_HOSTS and that HTTPS admin forms do not loop or fail CSRF validation.
+Do not open port 8000 to external clients. Restrict `/admin/` by VPN/IP and add MFA
+at the access proxy where possible. Schedule `clear_login_throttles` and
+`clearsessions` daily through `.\manage.ps1` with the same service environment.
+
 The Django app serves static files through WhiteNoise and media files through the project when `SERVE_MEDIA_FILES=True`.
 
 ## 11. Firewall
@@ -232,13 +279,9 @@ After the certificate is installed, bind it to the IIS site on port `443`.
 
 ## 13. Update After Future Changes
 
-```powershell
-Set-Location C:\plit99\app
-git pull
-C:\plit99\venv\Scripts\Activate.ps1
-.\build.ps1
-C:\nssm\nssm.exe restart plit99
-```
+Use the stop/backup/update/build/start sequence in [REDEPLOY.md](REDEPLOY.md).
+If the build fails, keep the service stopped until the error is resolved or the
+previous code and a compatible database are restored.
 
 ## 14. What Should Be Stored Where
 

@@ -8,3 +8,11 @@ media/
 *.log
 
 .vercel
+.runtime-data/
+.test-media/
+.security-venv/
+.venv*/
+*.sqlite3*
+.env.*
+!.env.example
+security-audit.json

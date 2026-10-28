@@ -8,7 +8,9 @@ from .media_utils import (
     gallery_image_upload_to,
     news_cover_upload_to,
     optimize_uploaded_image,
+    validate_uploaded_image,
 )
+from .content_security import sanitize_rich_text, validate_gradient, validate_video_url
 
 
 class NewsCategory(models.Model):
@@ -59,14 +61,30 @@ class News(models.Model):
     def __str__(self):
         return self.title
 
+    def clean(self):
+        super().clean()
+        try:
+            validate_gradient(self.cover_gradient)
+        except ValidationError as exc:
+            raise ValidationError({'cover_gradient': exc.messages}) from exc
+        if len(self.content) > 100_000:
+            raise ValidationError({'content': 'Текст новости не должен превышать 100 000 символов.'})
+        try:
+            validate_uploaded_image(self.cover_image)
+        except ValidationError as exc:
+            raise ValidationError({'cover_image': exc.messages}) from exc
+
     def save(self, *args, **kwargs):
+        validate_gradient(self.cover_gradient)
+        self.content = sanitize_rich_text(self.content) if '<' in self.content or '&' in self.content else self.content
         optimized_cover = optimize_uploaded_image(self.cover_image)
         if optimized_cover is not None:
             self.cover_image = optimized_cover
 
         if not self.slug:
-            base = slugify(self.title, allow_unicode=False)
+            base = slugify(self.title, allow_unicode=False)[:310]
             self.slug = base if base else str(uuid.uuid4())[:8]
+        self.full_clean()
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
@@ -118,6 +136,11 @@ class GalleryItem(models.Model):
 
     def clean(self):
         super().clean()
+        validate_video_url(self.video_url)
+        try:
+            validate_uploaded_image(self.image)
+        except ValidationError as exc:
+            raise ValidationError({'image': exc.messages}) from exc
 
         if self.media_type == 'photo':
             if not self.image:
@@ -136,3 +159,10 @@ class GalleryItem(models.Model):
 
         self.full_clean()
         super().save(*args, **kwargs)
+
+
+class AdminLoginThrottle(models.Model):
+    # Only keyed hashes of IP/account names are stored, never credentials.
+    key = models.CharField(max_length=64, primary_key=True)
+    expires_at = models.DateTimeField(db_index=True)
+    attempts = models.PositiveIntegerField(default=0)
