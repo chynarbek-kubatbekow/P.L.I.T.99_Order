@@ -1,0 +1,7 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Не удалось проверить форму</title></head>
+<body><main><h1>Не удалось проверить форму</h1>
+<p>Защита CSRF отклонила запрос. Изменения не выполнены.</p>
+{% if local_preview %}<p>{{ csrf_hint }}</p><p>Код проверки: <strong>{{ csrf_code }}</strong></p>{% endif %}
+<p><a href="{{ retry_url }}">Открыть новую форму</a></p>
+</main></body></html>

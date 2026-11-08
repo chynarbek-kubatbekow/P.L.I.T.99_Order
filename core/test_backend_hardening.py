@@ -167,7 +167,7 @@ class BackendHardeningTests(TestCase):
             response = self.client.get(route)
             self.assertEqual(response.status_code, 200)
             self.assertIn('no-store', response['Cache-Control'])
-            self.assertEqual(response['Referrer-Policy'], 'no-referrer')
+            self.assertEqual(response['Referrer-Policy'], 'same-origin')
             self.assertEqual(response['Cross-Origin-Resource-Policy'], 'same-origin')
             self.assertIn("script-src 'self';", response['Content-Security-Policy'])
             for header in ('Server', 'X-Powered-By', 'Access-Control-Allow-Origin', 'Access-Control-Allow-Credentials'):

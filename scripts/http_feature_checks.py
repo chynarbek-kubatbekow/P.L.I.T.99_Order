@@ -44,7 +44,7 @@ def run_feature_checks(base, *, large_upload=False):
 
     def assert_private(headers):
         assert 'no-store' in headers['Cache-Control']
-        assert headers['Referrer-Policy'] == 'no-referrer'
+        assert headers['Referrer-Policy'] == 'same-origin'
         assert "script-src 'self';" in headers['Content-Security-Policy']
         assert not any(name in headers for name in ('Server', 'X-Powered-By', 'Access-Control-Allow-Origin'))
 

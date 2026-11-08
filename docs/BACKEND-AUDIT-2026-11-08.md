@@ -34,7 +34,7 @@ authentication и до POST-разбора; корректность поряд�
 | Повреждённый не-ASCII ciphertext мог дать 500 в admin | Невалидная кодировка обрабатывается как ошибка расшифровки | Три повреждённых значения дают 200 с безопасным сообщением без вывода значения |
 | Приватные страницы использовали общую политику с доверенными сторонними script-origin | Для admin/контактов script-src только self, connect-src self; admin frame-src none | Проверены реальные заголовки HTTP и Django client |
 | Лишнее указание серверного ПО | Убраны app-level Server/X-Powered-By/X-AspNet-Version; Waitress запускается с пустым ident | Server отсутствует в HTTP smoke; оба start-скрипта передают `--ident=` |
-| Кэширование, referrer и попадание приватных страниц в архивы | no-store/private, no-referrer, CORP same-origin; admin noindex/nofollow/noarchive | Тесты login/admin/детали отзыва и контактов |
+| Кэширование, referrer и попадание приватных страниц в архивы | no-store/private, Referrer-Policy same-origin, CORP same-origin; admin noindex/nofollow/noarchive | Тесты login/admin/детали отзыва и контактов; исправление от 9 ноября ниже |
 | Данные функции могли попасть в диагностические отчёты при исключении | sensitive_variables на view, сохранении, ключах и расшифровке; sensitive_post_parameters на отправке | POST-параметр отзыва редактируется фильтром Django error reporter |
 | Конкурентный read→write в SQLite иногда приводил к 503 для всех участников | До четырёх попыток только для кодов SQLite BUSY/LOCKED после отката полной транзакции, с коротким jitter; остальные ошибки без retry | Пять последовательных конкурентных прогонов; отсутствие дублей и двойного расхода квоты; unknown error — ровно одна попытка |
 
@@ -162,3 +162,38 @@ SQLite не являются проверкой PostgreSQL. Для полног�
    HTTPS/HSTS, Secure-cookie, админский доступ и загрузку на рабочем сервере.
 
 Остаточные риски фиксируются здесь, а не заменяются обещанием абсолютной защиты.
+
+## Исправление браузерных форм и локального запуска — 9 ноября 2026
+
+Пользователь воспроизвёл 403 в Chrome и для входа, и для отзыва. Причина была
+в добавленном middleware-заголовке `Referrer-Policy: no-referrer`: для нативных
+HTML POST-форм браузер может послать `Origin: null`, что Django отклоняет.
+Предыдущие HTTP-тесты принудительно ставили корректный Origin и поэтому не
+поймали эту регрессию. Это был дефект конфигурации приложения, не пароль,
+миграции или необходимость ослаблять CSRF.
+
+Исправление: на формах `Referrer-Policy: same-origin`. Внешние сайты не получают
+referrer, а same-origin POST остаётся совместимым с CSRF. Добавлены регрессии
+входа → отзыва → чтения в admin и для HTTP, и для HTTPS. Origin в этих проверках
+определяется политикой ответа, а не задаётся независимо от неё. `null` и чужой
+Origin по-прежнему дают 403; отключений CSRF и wildcard origins нет.
+Поведение описано в [MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Referrer-Policy#effect_on_the_origin_header)
+и [Django](https://docs.djangoproject.com/en/5.2/ref/middleware/#referrer-policy).
+
+Общий локальный профиль — `scripts/local.py`, обёртки `run-local.ps1` и
+`run-local.sh`. Он загружает `.env`, затем необязательный `.env.local`, применяет
+HTTP-флаги только в дочернем процессе, отделяет cookies и слушает loopback.
+Management-команды используют ту же конфигурацию данных. Production
+build/start-скрипты не менялись. README и REDEPLOY дополнены отдельными командами
+локальной работы и Linux-редеплоя с сохранением существующих данных и ключей.
+
+Итог после исправления: **130 Django-тестов, 129 прошли, 1 пропущен** (тот же
+Windows symlink). **56 HTTP-проверок** с реальной граничной загрузкой 100 МиБ,
+**12 тестов launchers/deploy** (PowerShell и Git Bash), check/migrations и
+whitespace-check прошли. Существующий production `.env` прошёл check --deploy
+с одним предупреждением HSTS preload. Пользователь повторил вход и отправку
+отзыва в своём Chrome и подтвердил, что **обе формы работают**.
+
+Production HTTPS-проверки в тестах — проверки приложения, не проверка
+сертификата/конфига действующего nginx. Последний по-прежнему нужно проверить
+после редеплоя; он не должен добавлять `no-referrer` поверх заголовка приложения.

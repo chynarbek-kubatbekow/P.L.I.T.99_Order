@@ -75,7 +75,10 @@ class SecurityHeadersMiddleware:
                 + ("frame-src 'none'" if admin_page else 'frame-src https://www.google.com')
             )
             response['Cache-Control'] = 'no-store, private, max-age=0'
-            response['Referrer-Policy'] = 'no-referrer'
+            # Chrome may send Origin: null for HTML POST forms under
+            # no-referrer. Preserve same-site form checks without sending
+            # referrers to external sites.
+            response['Referrer-Policy'] = 'same-origin'
             response['Cross-Origin-Resource-Policy'] = 'same-origin'
             response['X-Robots-Tag'] = 'noindex, nofollow, noarchive' if admin_page else 'noarchive'
         for header in ('Server', 'X-Powered-By', 'X-AspNet-Version'):
