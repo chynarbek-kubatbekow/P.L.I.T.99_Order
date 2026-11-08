@@ -5,8 +5,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <!-- Google tag (gtag.js) -->
+  {% if request.resolver_match.url_name != 'contacts' and request.resolver_match.url_name != 'submit_feedback' %}
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-2FHXYBY7YP"></script>
   <script src="{% static 'js/analytics-init.js' %}"></script>
+  {% endif %}
   <title>{% block title %}IT-лицей 99{% endblock %} — Профессиональный лицей ИТ при Президенте КР</title>
   <meta name="description" content="{% block meta_desc %}Профессиональный лицей информационных технологий №99 при Президенте КР. Бесплатное ИТ-образование в Бишкеке. Основан в 2023 году.{% endblock %}">
   <meta name="theme-color" content="#0A2540">
@@ -15,7 +17,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;900&family=Golos+Text:wght@400;500;600;700&family=Lora:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/style.css' %}?v=20260629-nav-center-fix-1">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}?v=20261108-feedback-video-1">
   {% block extra_css %}{% endblock %}
 </head>
 <body class="{% block body_class %}{% endblock %}">
@@ -152,7 +154,7 @@
       <div class="footer-bottom-text">© 2026 IT-лицей 99 при Президенте Кыргызской Республики</div>
       <div class="footer-bottom-text">г. Бишкек, ул. Горького 18 · Основан в 2023 году</div>
     </div>
-    <div class="footer-credit">Сделано разработчиком К-у-Чынар</div>
+    {% if request.resolver_match.url_name == 'contacts' or request.resolver_match.url_name == 'submit_feedback' %}<div class="footer-credit">Сделано разработчиком К-у-Чынар</div>{% endif %}
   </div>
 </footer>
 

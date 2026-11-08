@@ -28,6 +28,14 @@
           {% endif %}
         </div>
 
+        {% if news.video_file %}
+        <div class="section-panel news-video-panel">
+          <video class="uploaded-video" controls playsinline preload="metadata" aria-label="{{ news.title }}">
+            <source src="{{ news.video_file.url }}" type="video/mp4">
+            Ваш браузер не поддерживает видео.
+          </video>
+        </div>
+        {% endif %}
         <div class="section-panel news-detail-content-panel">
           <div class="news-detail-body" style="max-width:none">
               {{ news.content|render_rich_text }}

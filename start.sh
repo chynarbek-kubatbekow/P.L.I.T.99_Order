@@ -18,4 +18,4 @@ if [ -n "${WAITRESS_TRUSTED_PROXY:-}" ]; then
   fi
   proxy_args=("--trusted-proxy=$WAITRESS_TRUSTED_PROXY" "--trusted-proxy-headers=x-forwarded-for x-forwarded-proto")
 fi
-exec "$PYTHON_EXECUTABLE" -m waitress --listen="${HOST}:${PORT}" --threads="${THREADS}" --max-request-body-size=12582912 --max-request-header-size=32768 --channel-timeout=60 --connection-limit=100 "${proxy_args[@]}" plit99_project.wsgi:application
+exec "$PYTHON_EXECUTABLE" -m waitress --listen="${HOST}:${PORT}" --threads="${THREADS}" --max-request-body-size=117440512 --max-request-header-size=32768 --channel-timeout=60 --connection-limit=100 --ident= "${proxy_args[@]}" plit99_project.wsgi:application

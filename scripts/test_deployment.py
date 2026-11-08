@@ -101,8 +101,8 @@ class DeploymentEntryPointTests(unittest.TestCase):
                 self.assertTrue(all(c["runtime_role"] for c in calls))
                 self.assertTrue(all(not c["has_migration_secret"] for c in calls))
                 self.assertEqual(calls[-1]["kind"], "waitress")
-                for flag in ("--listen=127.0.0.1:8000", "--max-request-body-size=12582912",
-                             "--max-request-header-size=32768", "--connection-limit=100"):
+                for flag in ("--listen=127.0.0.1:8000", "--max-request-body-size=117440512",
+                             "--max-request-header-size=32768", "--connection-limit=100", "--ident="):
                     self.assertIn(flag, calls[-1]["args"])
 
     def test_unapplied_migrations_prevent_listening(self):

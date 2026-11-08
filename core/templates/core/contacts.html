@@ -54,6 +54,21 @@
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d747.4!2d74.5966!3d42.8701!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389eb7b0f1507a4f%3A0x5afc9bcbb2db47f8!2z0KPQu9C40YbQsCDQk9C-0YDRjNC60L7Qs9C-LCAxOCwg0JHQuNGI0LrQtdC6!5e0!3m2!1sru!2skg!4v1234567890" allowfullscreen loading="lazy" title="ПЛИТ №99 на карте"></iframe>
         </div>
         <div class="contact-note">Лицей находится в Бишкеке по адресу ул. Горького, 18. Перед первым визитом удобно заранее посмотреть дорогу на карте.</div>
+        <section class="feedback-box section-panel" id="feedback" aria-labelledby="feedback-title">
+          <span class="label">Обратная связь</span>
+          <h2 id="feedback-title" class="h3">Ящик отзывов</h2>
+          <p>Поделитесь идеей или расскажите о проблеме. Отзывы не публикуются: их читают только уполномоченные сотрудники лицея.</p>
+          <p class="feedback-privacy">Имя и контакты не нужны. Не указывайте пароли, документы и другие чувствительные сведения.</p>
+          {% if feedback_sent %}<p class="feedback-success" role="status">Спасибо! Ваш отзыв отправлен в лицей.</p>{% endif %}
+          {% if feedback_error %}<p class="feedback-error" role="alert">{{ feedback_error }}</p>{% endif %}
+          <form action="{% url 'submit_feedback' %}" method="post" autocomplete="off">
+            {% csrf_token %}
+            {{ feedback_form.website }}
+            <label for="id_message">Ваш отзыв <span>(10–4000 символов)</span></label>
+            {{ feedback_form.message }}
+            <button class="btn btn-primary" type="submit">Отправить отзыв →</button>
+          </form>
+        </section>
       </div>
     </div>
   </div>

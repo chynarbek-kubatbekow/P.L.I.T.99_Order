@@ -109,6 +109,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'core.middleware.RequestLimitsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'core.middleware.AdminLoginThrottleMiddleware',
@@ -233,6 +234,11 @@ DATA_UPLOAD_MAX_NUMBER_FILES = 10
 FILE_UPLOAD_MAX_MEMORY_SIZE = 2 * 1024 * 1024
 MAX_UPLOAD_IMAGE_BYTES = 10 * 1024 * 1024
 MAX_UPLOAD_IMAGE_PIXELS = 20_000_000
+MAX_UPLOAD_VIDEO_BYTES = 100 * 1024 * 1024
+FEEDBACK_ENCRYPTION_KEYS = env_list('FEEDBACK_ENCRYPTION_KEYS')
+FEEDBACK_ENCRYPTION_KEY_FILE = os.getenv('FEEDBACK_ENCRYPTION_KEY_FILE', '').strip()
+FEEDBACK_IP_LIMIT = 5
+FEEDBACK_GLOBAL_LIMIT = 200
 FILE_UPLOAD_PERMISSIONS = 0o600
 FILE_UPLOAD_DIRECTORY_PERMISSIONS = 0o700
 ADMIN_LOGIN_WINDOW_SECONDS = 300

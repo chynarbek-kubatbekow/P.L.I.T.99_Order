@@ -20,6 +20,7 @@ from urllib.request import Request, urlopen
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--serve', action='store_true')
+    parser.add_argument('--large-upload', action='store_true', help='Also send real 100 MiB and over-limit multipart uploads to the disposable site.')
     args = parser.parse_args()
     root = Path(__file__).resolve().parent.parent
     sys.path.insert(0, str(root))
@@ -48,7 +49,7 @@ def main():
         News.objects.filter(pk=news.pk).update(content='<p>Allowed news text.</p><script>HTTP_XSS_MARKER()</script>')
         server = create_server(
             get_wsgi_application(), host='127.0.0.1', port=0, threads=4,
-            max_request_body_size=12582912, max_request_header_size=32768,
+            max_request_body_size=117440512, max_request_header_size=32768, ident='',
             channel_timeout=60, connection_limit=100,
         )
         thread = threading.Thread(target=server.run, daemon=True)
@@ -86,7 +87,7 @@ def main():
             for path in ('/static/css/style.css', '/static/js/main.js', '/static/js/career-test.js', '/static/js/analytics-init.js', '/static/admin/css/base.css'):
                 check(path, 200)
             connection = http.client.HTTPConnection('127.0.0.1', port, timeout=10)
-            connection.request('POST', '/admin/login/', headers={'Content-Length': '12582913'})
+            connection.request('POST', '/admin/login/', headers={'Content-Length': '117440513'})
             response = connection.getresponse()
             assert response.status == 413, response.status
             checked += 1
@@ -127,6 +128,9 @@ def main():
                 'X-Rewrite-URL': '/admin/auth/user/',
                 'X-Forwarded-Host': 'attacker.invalid',
             })
+            assert headers.get('Server') is None
+            from scripts.http_feature_checks import run_feature_checks
+            checked += run_feature_checks(base, large_upload=args.large_upload)
             print(f'HTTP security smoke: {checked} checks passed.', flush=True)
             if args.serve:
                 print(f'Isolated browser preview: {base}', flush=True)

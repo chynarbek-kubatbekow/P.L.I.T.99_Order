@@ -11,6 +11,7 @@ from .media_utils import (
     validate_uploaded_image,
 )
 from .content_security import sanitize_rich_text, validate_gradient, validate_video_url
+from .video_uploads import normalize_video, video_upload_to
 
 
 class NewsCategory(models.Model):
@@ -28,6 +29,8 @@ class NewsCategory(models.Model):
 
 
 class News(models.Model):
+    video_file = models.FileField('Видео', upload_to=video_upload_to, blank=True,
+        help_text='MP4, MOV или WebM: до 100 МБ, до 2 минут. Преобразуется в MP4; обложку можно оставить.')
     title        = models.CharField('Заголовок', max_length=300)
     slug         = models.SlugField('Slug', unique=True, blank=True, max_length=320)
     excerpt      = models.TextField('Краткое описание', max_length=400)
@@ -63,6 +66,10 @@ class News(models.Model):
 
     def clean(self):
         super().clean()
+        try:
+            self.video_file = normalize_video(self.video_file)
+        except ValidationError as exc:
+            raise ValidationError({'video_file': exc.messages}) from exc
         try:
             validate_gradient(self.cover_gradient)
         except ValidationError as exc:
@@ -107,7 +114,9 @@ class GalleryCategory(models.Model):
 
 
 class GalleryItem(models.Model):
-    MEDIA_CHOICES = [('photo', 'Фотография'), ('video', 'Видео (ссылка)')]
+    MEDIA_CHOICES = [('photo', 'Фотография'), ('video', 'Видео (файл или ссылка)')]
+    video_file = models.FileField('Видеофайл', upload_to=video_upload_to, blank=True,
+        help_text='MP4, MOV или WebM: до 100 МБ, до 2 минут. Выберите тип «Видео» и один источник.')
 
     title      = models.CharField('Подпись', max_length=200, blank=True)
     media_type = models.CharField('Тип', max_length=10, choices=MEDIA_CHOICES, default='photo')
@@ -138,18 +147,24 @@ class GalleryItem(models.Model):
         super().clean()
         validate_video_url(self.video_url)
         try:
+            self.video_file = normalize_video(self.video_file)
+        except ValidationError as exc:
+            raise ValidationError({'video_file': exc.messages}) from exc
+        try:
             validate_uploaded_image(self.image)
         except ValidationError as exc:
             raise ValidationError({'image': exc.messages}) from exc
 
         if self.media_type == 'photo':
+            if self.video_file:
+                raise ValidationError({'video_file': 'Для видео выберите тип «Видео».'})
             if not self.image:
                 raise ValidationError({'image': 'Для фото нужно загрузить изображение.'})
             self.video_url = ''
 
         if self.media_type == 'video':
-            if not self.video_url:
-                raise ValidationError({'video_url': 'Для видео нужно указать ссылку.'})
+            if bool(self.video_url) == bool(self.video_file):
+                raise ValidationError({'video_file': 'Укажите один источник: видеoфайл или ссылку.'})
             self.image = None
 
     def save(self, *args, **kwargs):
@@ -166,3 +181,22 @@ class AdminLoginThrottle(models.Model):
     key = models.CharField(max_length=64, primary_key=True)
     expires_at = models.DateTimeField(db_index=True)
     attempts = models.PositiveIntegerField(default=0)
+
+
+class PrivateFeedback(models.Model):
+    encrypted_message = models.TextField(editable=False)
+    created_at = models.DateTimeField('Получен', auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Приватный отзыв'
+        verbose_name_plural = 'Приватные отзывы'
+        ordering = ['-created_at', '-pk']
+        default_permissions = ('view', 'delete')
+
+    def __str__(self):
+        return f'Отзыв №{self.pk}'
+
+    def save(self, *args, **kwargs):
+        if not self._state.adding:
+            raise ValidationError('Отправленные отзывы нельзя редактировать.')
+        super().save(*args, **kwargs)

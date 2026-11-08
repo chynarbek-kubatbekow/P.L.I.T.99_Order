@@ -258,7 +258,10 @@ class AdminSecurityTests(TestCase):
 
     def test_oversized_body_and_excessive_fields_are_rejected(self):
         response = self.client.post('/admin/login/', {'username': 'x' * (settings.DATA_UPLOAD_MAX_MEMORY_SIZE + 1)})
-        self.assertEqual(response.status_code, 400)
+        # The new pre-parser route limit rejects the body before Django parses
+        # it (413); the independent field-count limit below remains a 400.
+        self.assertEqual(response.status_code, 413)
+        self.assertNotIn('_auth_user_id', self.client.session)
         response = self.client.post('/admin/login/', {f'field{i}': 'x' for i in range(settings.DATA_UPLOAD_MAX_NUMBER_FIELDS + 1)})
         self.assertEqual(response.status_code, 400)
 

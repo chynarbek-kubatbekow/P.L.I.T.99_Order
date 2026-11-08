@@ -128,6 +128,14 @@
             <img src="{{ item.image.url }}" alt="{{ item.title }}" loading="lazy" decoding="async" style="width:100%;display:block">
             {% if item.title %}<div style="padding:.75rem 1rem;font-size:.82rem;color:var(--gray-600)">{{ item.title }}</div>{% endif %}
           </div>
+        {% elif item.media_type == 'video' and item.video_file %}
+          <div class="gallery-item section-panel" style="padding:0">
+            <video class="uploaded-video" controls preload="metadata" playsinline{% if item.title %} aria-label="{{ item.title }}"{% endif %}>
+              <source src="{{ item.video_file.url }}" type="video/mp4">
+              Ваш браузер не поддерживает видео.
+            </video>
+            {% if item.title %}<div style="padding:.75rem 1rem">{{ item.title }}</div>{% endif %}
+          </div>
         {% elif item.media_type == 'video' and item.video_url %}
           <div class="gallery-item section-panel" style="padding:0" data-aos data-delay="{{ forloop.counter0 }}00">
             <div style="position:relative;padding-bottom:56.25%;background:var(--ocean-900)">

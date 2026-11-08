@@ -12,6 +12,33 @@ from django.utils.deprecation import MiddlewareMixin
 from .models import AdminLoginThrottle
 
 
+class RequestLimitsMiddleware(MiddlewareMixin):
+    """Run before CSRF parses POST; auth is initialized by the request chain."""
+    def process_view(self, request, view_func, view_args, view_kwargs):
+        raw_length = request.META.get('CONTENT_LENGTH', '')
+        if raw_length and (len(raw_length) > 20 or not raw_length.isascii() or not raw_length.isdigit()):
+            return HttpResponse('Некорректный запрос.', status=400)
+        length = int(raw_length or 0)
+        maximum = 1024 * 1024
+        view_name = request.resolver_match.view_name if request.resolver_match else ''
+        if view_name in {'submit_feedback', 'admin:login'}:
+            maximum = 65536
+        upload_permissions = {
+            'admin:core_news_add': 'core.add_news',
+            'admin:core_news_change': 'core.change_news',
+            'admin:core_galleryitem_add': 'core.add_galleryitem',
+            'admin:core_galleryitem_change': 'core.change_galleryitem',
+        }
+        permission = upload_permissions.get(view_name)
+        if permission and request.method == 'POST' and request.content_type == 'multipart/form-data':
+            user = request.user
+            if user.is_active and user.is_staff and user.has_perm(permission):
+                maximum = 112 * 1024 * 1024
+        if length > maximum:
+            return HttpResponse('Запрос слишком большой для этой операции.', status=413)
+        return None
+
+
 class SecurityHeadersMiddleware:
     def __init__(self, get_response):
         self.get_response = get_response
@@ -34,6 +61,26 @@ class SecurityHeadersMiddleware:
         ))
         response['Permissions-Policy'] = 'camera=(), microphone=(), geolocation=()'
         response['X-Content-Type-Options'] = 'nosniff'
+        # Browser tools can inspect anything delivered to the browser. Keep
+        # private pages minimal, uncached and isolated from third-party scripts.
+        private_page = request.path_info.startswith('/admin/') or request.path_info in {'/contacts/', '/contacts/feedback/'}
+        if private_page:
+            admin_page = request.path_info.startswith('/admin/')
+            response['Content-Security-Policy'] = (
+                "default-src 'self'; base-uri 'self'; object-src 'none'; "
+                "frame-ancestors 'none'; form-action 'self'; script-src 'self'; "
+                "style-src 'self' 'unsafe-inline'" + ('' if admin_page else ' https://fonts.googleapis.com') + '; '
+                "font-src 'self'" + ('' if admin_page else ' https://fonts.gstatic.com') + '; '
+                "img-src 'self' data:; connect-src 'self'; media-src 'self'; "
+                + ("frame-src 'none'" if admin_page else 'frame-src https://www.google.com')
+            )
+            response['Cache-Control'] = 'no-store, private, max-age=0'
+            response['Referrer-Policy'] = 'no-referrer'
+            response['Cross-Origin-Resource-Policy'] = 'same-origin'
+            response['X-Robots-Tag'] = 'noindex, nofollow, noarchive' if admin_page else 'noarchive'
+        for header in ('Server', 'X-Powered-By', 'X-AspNet-Version'):
+            if header in response:
+                del response[header]
         return response
 
 

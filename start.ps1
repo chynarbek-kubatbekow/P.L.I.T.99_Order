@@ -8,7 +8,7 @@ Invoke-ProjectPython manage.py check --deploy --fail-level ERROR
 # The service must not require schema-changing database privileges.
 Invoke-ProjectPython manage.py migrate --check
 
-$waitressArgs = @("--listen=${listenHost}:$port", "--threads=$threads", "--max-request-body-size=12582912", "--max-request-header-size=32768", "--channel-timeout=60", "--connection-limit=100")
+$waitressArgs = @("--listen=${listenHost}:$port", "--threads=$threads", "--max-request-body-size=117440512", "--max-request-header-size=32768", "--channel-timeout=60", "--connection-limit=100", "--ident=")
 if ($env:WAITRESS_TRUSTED_PROXY) {
     if ($env:WAITRESS_TRUSTED_PROXY -eq "*") { throw "Use an explicit trusted proxy address." }
     $waitressArgs += "--trusted-proxy=$env:WAITRESS_TRUSTED_PROXY"
